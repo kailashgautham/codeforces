@@ -49,15 +49,11 @@ int check_direction(vector<int>& a, int n) {
 
         if (plus_minus.contains(a[i])) best_ans = min(best_ans, 1);
 
-        if (plus_minus.contains(a[i] + 1)) best_ans = min(best_ans, 2);
-
         factors.insert(a[i]);
         plus_minus.insert(a[i] + 1);
 
         factors.insert(new_factors.begin(), new_factors.end());
         plus_minus.insert(new_plus_minus.begin(), new_plus_minus.end());
-
-        if (i == 0) best_ans = min(best_ans, 2);
     }
     return best_ans;
 }
